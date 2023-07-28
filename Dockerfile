@@ -10,8 +10,5 @@ RUN make build
 # Start fresh from a smaller image
 FROM alpine:3.9
 COPY --from=build_base /main/treasury_service /
-COPY mail mail
-COPY templates templates
-COPY static static
-
+COPY . .
 CMD ["/treasury_service"]
