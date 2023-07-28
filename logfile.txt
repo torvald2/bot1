@@ -1,0 +1,114 @@
+2023/07/20 23:04:34 Error while trying to get post from ethereum; err - response status 404 Not Found: 
+2023/07/20 23:04:51 Error while trying to get post from binance; err - response status 404 Not Found: 
+2023/07/23 12:19:41 telegram: Bad Request: there are no messages to send (400)
+2023/07/23 19:07:59 Error while trying to get post from ethereum; err - response status 400 Bad Request: {"errors":[{"message":"The following features cannot be null: responsive_web_twitter_article_tweet_consumption_enabled, responsive_web_media_download_video_enabled","extensions":{"name":"BadRequestError","source":"Client","code":336,"kind":"Validation","tracing":{"trace_id":"e964e7076e8a7459"}},"code":336,"kind":"Validation","name":"BadRequestError","source":"Client","tracing":{"trace_id":"e964e7076e8a7459"}}]}
+2023/07/23 19:08:31 Error while trying to get post from coinbase; err - response status 400 Bad Request: {"errors":[{"message":"The following features cannot be null: responsive_web_media_download_video_enabled, responsive_web_twitter_article_tweet_consumption_enabled","extensions":{"name":"BadRequestError","source":"Client","code":336,"kind":"Validation","tracing":{"trace_id":"8a5ed4bae5b642d1"}},"code":336,"kind":"Validation","name":"BadRequestError","source":"Client","tracing":{"trace_id":"8a5ed4bae5b642d1"}}]}
+2023/07/24 16:01:30 Error while trying to get post from binance; err - response status 400 Bad Request: {"errors":[{"message":"The following features cannot be null: responsive_web_twitter_article_tweet_consumption_enabled, responsive_web_media_download_video_enabled","extensions":{"name":"BadRequestError","source":"Client","code":336,"kind":"Validation","tracing":{"trace_id":"55f5e50e05bd2154"}},"code":336,"kind":"Validation","name":"BadRequestError","source":"Client","tracing":{"trace_id":"55f5e50e05bd2154"}}]}
+2023/07/24 16:03:23 telegram: Bad Request: there are no messages to send (400)
+2023/07/24 16:05:47 telegram: Bad Request: there are no messages to send (400)
+2023/07/26 11:52:41 telegram: Bad Request: there are no messages to send (400)
+2023/07/26 14:24:25 Error while trying to get post from coinbase; err - response status 400 Bad Request: {"errors":[{"message":"The following features cannot be null: responsive_web_media_download_video_enabled, responsive_web_twitter_article_tweet_consumption_enabled","extensions":{"name":"BadRequestError","source":"Client","code":336,"kind":"Validation","tracing":{"trace_id":"4d2ce49b0f95cd82"}},"code":336,"kind":"Validation","name":"BadRequestError","source":"Client","tracing":{"trace_id":"4d2ce49b0f95cd82"}}]}
+2023/07/27 15:14:14 Error while trying to get quoted post
+2023/07/27 15:16:25 Error while trying to get post from coinbase; err - response status 400 Bad Request: {"errors":[{"message":"The following features cannot be null: responsive_web_media_download_video_enabled, responsive_web_twitter_article_tweet_consumption_enabled","extensions":{"name":"BadRequestError","source":"Client","code":336,"kind":"Validation","tracing":{"trace_id":"20c9f7d67feae4b6"}},"code":336,"kind":"Validation","name":"BadRequestError","source":"Client","tracing":{"trace_id":"20c9f7d67feae4b6"}}]}
+2023/07/27 15:17:49 Error while trying to get post from coinbase; err - response status 400 Bad Request: {"errors":[{"message":"The following features cannot be null: responsive_web_media_download_video_enabled, responsive_web_twitter_article_tweet_consumption_enabled","extensions":{"name":"BadRequestError","source":"Client","code":336,"kind":"Validation","tracing":{"trace_id":"a8c3c4e87be97a7d"}},"code":336,"kind":"Validation","name":"BadRequestError","source":"Client","tracing":{"trace_id":"a8c3c4e87be97a7d"}}]}
+2023/07/27 15:19:42 Error while trying to get post from coinbase; err - response status 400 Bad Request: {"errors":[{"message":"The following features cannot be null: responsive_web_media_download_video_enabled, responsive_web_twitter_article_tweet_consumption_enabled","extensions":{"name":"BadRequestError","source":"Client","code":336,"kind":"Validation","tracing":{"trace_id":"14d2573539471eef"}},"code":336,"kind":"Validation","name":"BadRequestError","source":"Client","tracing":{"trace_id":"14d2573539471eef"}}]}
+2023/07/27 15:43:13 telegram: Bad Request: there are no messages to send (400)
+2023/07/27 15:44:28 telegram: Bad Request: there are no messages to send (400)
+2023/07/27 15:47:16 telegram: Bad Request: there are no messages to send (400)
+2023/07/27 16:52:52 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 11:29:36 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 11:33:03 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 11:34:22 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 11:35:50 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 11:50:23 telegram: chat not found (400)
+2023/07/28 11:51:55 telegram: chat not found (400)
+2023/07/28 12:07:45 Error while trying to get post from BinanceUkraine; err - context deadline exceeded (Client.Timeout or context cancellation while reading body)
+2023/07/28 14:49:49 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 14:50:50 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 14:51:52 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 14:52:53 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 14:53:54 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 14:56:57 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 14:57:57 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 15:02:24 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 15:04:53 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 15:07:25 Error while trying to get post from POTUS; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:08:29 Error while trying to get post from coinbase; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:08:39 Error while trying to get post from BTCTN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:08:50 Error while trying to get post from CoinDesk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:09:00 Error while trying to get post from BBCWorld; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:09:10 Error while trying to get post from CNN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:09:20 Error while trying to get post from KpsZSU; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:09:30 Error while trying to get post from POTUS; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:09:40 Error while trying to get post from elonmusk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:09:51 Error while trying to get post from binance; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:10:01 Error while trying to get post from BinanceUkraine; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:10:11 Error while trying to get post from ZelenskyyUa; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:10:21 Error while trying to get post from GeneralStaffUA; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:10:31 Error while trying to get post from coinbase; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:10:41 Error while trying to get post from BTCTN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:10:52 Error while trying to get post from CoinDesk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:11:02 Error while trying to get post from BBCWorld; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:11:12 Error while trying to get post from CNN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:11:22 Error while trying to get post from KpsZSU; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:11:32 Error while trying to get post from POTUS; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:11:42 Error while trying to get post from elonmusk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:11:53 Error while trying to get post from binance; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:12:03 Error while trying to get post from BinanceUkraine; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:12:13 Error while trying to get post from ZelenskyyUa; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:12:23 Error while trying to get post from GeneralStaffUA; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:12:33 Error while trying to get post from coinbase; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:12:43 Error while trying to get post from BTCTN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:12:53 Error while trying to get post from CoinDesk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:13:04 Error while trying to get post from BBCWorld; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:13:14 Error while trying to get post from CNN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:13:24 Error while trying to get post from KpsZSU; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:13:34 Error while trying to get post from POTUS; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:13:44 Error while trying to get post from elonmusk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:13:54 Error while trying to get post from binance; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:14:05 Error while trying to get post from BinanceUkraine; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:14:15 Error while trying to get post from ZelenskyyUa; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:14:25 Error while trying to get post from GeneralStaffUA; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:14:35 Error while trying to get post from coinbase; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:14:45 Error while trying to get post from BTCTN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:14:55 Error while trying to get post from CoinDesk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:15:06 Error while trying to get post from BBCWorld; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:15:16 Error while trying to get post from CNN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:15:26 Error while trying to get post from KpsZSU; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:15:36 Error while trying to get post from POTUS; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:15:46 Error while trying to get post from elonmusk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:15:56 Error while trying to get post from binance; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:16:07 Error while trying to get post from BinanceUkraine; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:16:17 Error while trying to get post from ZelenskyyUa; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:16:27 Error while trying to get post from GeneralStaffUA; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:16:37 Error while trying to get post from coinbase; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:16:47 Error while trying to get post from BTCTN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:16:57 Error while trying to get post from CoinDesk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:17:08 Error while trying to get post from BBCWorld; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:17:18 Error while trying to get post from CNN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:17:28 Error while trying to get post from KpsZSU; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:17:38 Error while trying to get post from POTUS; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:17:48 Error while trying to get post from elonmusk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:17:58 Error while trying to get post from binance; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:18:09 Error while trying to get post from BinanceUkraine; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:18:19 Error while trying to get post from ZelenskyyUa; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:18:49 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 15:21:25 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 15:24:24 Error while trying to get post from BTCTN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:24:35 Error while trying to get post from CoinDesk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:24:45 Error while trying to get post from BBCWorld; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:24:55 Error while trying to get post from CNN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:25:05 Error while trying to get post from KpsZSU; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:25:15 Error while trying to get post from POTUS; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:25:25 Error while trying to get post from elonmusk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:25:36 Error while trying to get post from binance; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:25:46 Error while trying to get post from BinanceUkraine; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:25:56 Error while trying to get post from ZelenskyyUa; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:26:06 Error while trying to get post from GeneralStaffUA; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:26:16 Error while trying to get post from coinbase; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:26:26 Error while trying to get post from BTCTN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:26:37 Error while trying to get post from CoinDesk; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:26:47 Error while trying to get post from BBCWorld; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:26:57 Error while trying to get post from CNN; err - response status 429 Too Many Requests: Rate limit exceeded
+2023/07/28 15:34:37 telegram: Bad Request: there are no messages to send (400)
+2023/07/28 15:37:23 telegram: Bad Request: there are no messages to send (400)
