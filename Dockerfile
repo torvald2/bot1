@@ -1,11 +1,12 @@
-FROM golang:1.19 AS build_base
-WORKDIR /main
-COPY . /main
+FROM golang:1.19
 
-RUN make build
+WORKDIR /dockerapp
 
-# Start fresh from a smaller image
-FROM alpine:3.9
-COPY --from=build_base /main/treasury_service /
 COPY . .
-CMD ["/treasury_service"]
+
+RUN go mod download
+
+RUN go build -o /main
+
+
+CMD ["/main"]
