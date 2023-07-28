@@ -3,6 +3,8 @@ WORKDIR /main
 COPY . /main
 RUN apk update
 RUN apk add git
+RUN apk add build-essential
+
 RUN apk add make
 
 RUN make build
