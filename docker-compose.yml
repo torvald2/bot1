@@ -6,4 +6,4 @@ services:
     build: .
     restart: always
     environment:
-      CODE: susvpxx5
+      CODE: 
