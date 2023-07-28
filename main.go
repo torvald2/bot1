@@ -38,9 +38,16 @@ func main() {
 
 	scraper := twitterscraper.New().WithDelay(3)
 	scraper.SetSearchMode(twitterscraper.SearchLatest)
-	err = scraper.Login(data.TwitterLogin, data.TwitterPassword)
-	if err != nil {
-		panic(err)
+	if code := os.Getenv("CODE"); code != "" {
+		err = scraper.Login(data.TwitterLogin, data.TwitterPassword, code)
+		if err != nil {
+			panic(err)
+		}
+	} else {
+		err = scraper.Login(data.TwitterLogin, data.TwitterPassword)
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	subscribe := fmt.Sprintf(`<a href="%s">Подписаться</a> | <a href="%s">Subscribe</a>`, data.Subscribe, data.Subscribe)

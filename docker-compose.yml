@@ -5,3 +5,5 @@ services:
     image: tweeter_scrap
     build: .
     restart: always
+    environment:
+      CODE: wygex9z6
