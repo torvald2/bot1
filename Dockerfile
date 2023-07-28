@@ -1,4 +1,4 @@
-FROM golang:1.19-alpine AS build_base
+FROM golang:1.19 AS build_base
 WORKDIR /main
 COPY . /main
 RUN apk update
