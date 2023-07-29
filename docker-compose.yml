@@ -5,4 +5,4 @@ services:
     image: tweeter_scrap
     build: .
     environment:
-      CODE: 
+      CODE: d3hfv56g
