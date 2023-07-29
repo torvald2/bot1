@@ -12,6 +12,7 @@ type Config struct {
 	ContactUs       string     `json:"ContactUs"`
 	TwitterLogin    string     `json:"TwitterLogin"`
 	TwitterPassword string     `json:"TwitterPassword"`
+	TwitterEmail    string     `json:"TwitterEmail"`
 }
 
 func New(fileName string) (*Config, error) {

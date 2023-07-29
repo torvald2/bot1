@@ -44,7 +44,7 @@ func main() {
 			panic(err)
 		}
 	} else {
-		err = scraper.Login(data.TwitterLogin, data.TwitterPassword)
+		err = scraper.Login(data.TwitterLogin, data.TwitterPassword, data.TwitterEmail)
 		if err != nil {
 			panic(err)
 		}
