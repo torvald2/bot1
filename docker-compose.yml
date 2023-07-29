@@ -6,4 +6,4 @@ services:
     build: .
     restart: always
     environment:
-      CODE: erfe9cf3
+      CODE: 
