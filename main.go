@@ -21,13 +21,6 @@ import (
 var t = translator.NewTranslator(&http.Client{})
 
 func main() {
-	file, err := os.OpenFile("logfile.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
-	log.SetOutput(file)
 
 	data, err := config.New("config")
 	if err != nil {
