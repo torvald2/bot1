@@ -76,7 +76,7 @@ func main() {
 					//r = tweet.Error
 					//i++
 					log.Printf("Error while trying to get post from %s; err - %s", user, tweet.Error)
-					time.Sleep(time.Second * 10)
+					time.Sleep(time.Second * 20)
 					continue
 				}
 				tweets = append(tweets, tweet)
