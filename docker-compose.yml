@@ -4,6 +4,5 @@ services:
   tweeter_scrap:
     image: tweeter_scrap
     build: .
-    restart: always
     environment:
       CODE: 
