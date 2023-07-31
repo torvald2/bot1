@@ -69,6 +69,7 @@ func main() {
 	}()
 
 	for {
+	USER_LOOP:
 		for _, user := range data.Users {
 			tweets := make([]*twitterscraper.TweetResult, 0)
 			for tweet := range scraper.SearchTweets(context.Background(), fmt.Sprintf("from:%s", user), 5) {
@@ -76,8 +77,8 @@ func main() {
 					//r = tweet.Error
 					//i++
 					log.Printf("Error while trying to get post from %s; err - %s", user, tweet.Error)
-					time.Sleep(time.Minute * 2)
-					continue
+					time.Sleep(time.Minute * 10)
+					goto USER_LOOP
 				}
 				tweets = append(tweets, tweet)
 			}
@@ -215,7 +216,7 @@ func main() {
 				log.Println(err)
 			}
 
-			time.Sleep(time.Minute * 3)
+			time.Sleep(time.Minute * 4)
 		}
 	}
 
