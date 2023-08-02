@@ -77,7 +77,7 @@ func main() {
 					//r = tweet.Error
 					//i++
 					log.Printf("Error while trying to get post from %s; err - %s", user, tweet.Error)
-					time.Sleep(time.Minute * 20)
+					time.Sleep(time.Minute * 45)
 					goto USER_LOOP
 				}
 				tweets = append(tweets, tweet)
@@ -216,7 +216,7 @@ func main() {
 				log.Println(err)
 			}
 
-			time.Sleep(time.Minute * 6)
+			time.Sleep(time.Minute * 10)
 		}
 	}
 
