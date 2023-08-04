@@ -72,7 +72,7 @@ func main() {
 	USER_LOOP:
 		for _, user := range data.Users {
 			tweets := make([]*twitterscraper.TweetResult, 0)
-			for tweet := range scraper.SearchTweets(context.Background(), fmt.Sprintf("from:%s", user), 2) {
+			for tweet := range scraper.SearchTweets(context.Background(), fmt.Sprintf("from:%s", user), 5) {
 				if tweet.Error != nil {
 					//r = tweet.Error
 					//i++
@@ -89,72 +89,120 @@ func main() {
 				return tweets[i].Timestamp > tweets[j].Timestamp
 			})
 
-			tweet := tweets[0]
+			for _, tweet := range tweets {
 
-			//r = nil
-			txt := ""
-			_, err = db.Exec(database.InsertionQuery, tweet.ID, time.Now())
-			if err != nil {
-				continue
-			}
-
-			postUrl := tweet.PermanentURL
-
-			txt += fmt.Sprintf("<code>%s</code>\n\n", getDate(tweet.Timestamp))
-			txt += fmt.Sprintf(`<a href="https://twitter.com/%s">@%s</a>`, tweet.Username, tweet.Username) + "\n"
-
-			tex := tweet.Text
-
-			var retweet *twitterscraper.Tweet
-			if tweet.IsRetweet {
-				retweet, _ = scraper.GetTweet(tweet.RetweetedStatusID)
-				if retweet != nil {
-					tex = retweet.Text
-				}
-
-			}
-			var quoted *twitterscraper.Tweet
-			if tweet.IsQuoted {
-				quoted, err = scraper.GetTweet(tweet.QuotedStatusID)
+				//r = nil
+				txt := ""
+				_, err = db.Exec(database.InsertionQuery, tweet.ID, time.Now())
 				if err != nil {
-					log.Println("Error while trying to get quoted post")
+					continue
 				}
-			}
 
-			if len(tex) > 240 {
-				tex = tex[:240] + "..."
-			}
+				postUrl := tweet.PermanentURL
 
-			orgText, transtext := normalizeText(&tweet.Tweet, tex, retweet)
+				txt += fmt.Sprintf("<code>%s</code>\n\n", getDate(tweet.Timestamp))
+				txt += fmt.Sprintf(`<a href="https://twitter.com/%s">@%s</a>`, tweet.Username, tweet.Username) + "\n"
 
-			txt += orgText
-			txt += transtext
+				tex := tweet.Text
 
-			tags := findTxt(tweet.HTML)
-			for k, v := range tags {
-				txt = strings.Replace(txt, k, fmt.Sprintf(`<a href="%s">%s</a>`, v, k), -1)
-			}
+				var retweet *twitterscraper.Tweet
+				if tweet.IsRetweet {
+					retweet, _ = scraper.GetTweet(tweet.RetweetedStatusID)
+					if retweet != nil {
+						tex = retweet.Text
+					}
 
-			media := tele.Album{}
+				}
+				var quoted *twitterscraper.Tweet
+				if tweet.IsQuoted {
+					quoted, err = scraper.GetTweet(tweet.QuotedStatusID)
+					if err != nil {
+						log.Println("Error while trying to get quoted post")
+					}
+				}
 
-			if tweet.IsQuoted {
+				if len(tex) > 240 {
+					tex = tex[:240] + "..."
+				}
 
-				txt += "Quoted tweet:\nПроцитированный твит:\n\n"
+				orgText, transtext := normalizeText(&tweet.Tweet, tex, retweet)
 
-				txt += fmt.Sprintf(`<a href="https://tweeter.com/%s">@%s</a>`, quoted.Username, quoted.Username) + "\n"
+				txt += orgText
+				txt += transtext
 
-				orgTextq, transtextq := normalizeText(quoted, quoted.Text, retweet)
+				tags := findTxt(tweet.HTML)
+				for k, v := range tags {
+					txt = strings.Replace(txt, k, fmt.Sprintf(`<a href="%s">%s</a>`, v, k), -1)
+				}
 
-				txt += orgTextq
-				txt += transtextq
+				media := tele.Album{}
 
-				txt += "<code>via Twitter</code>\n" + postUrl + "\n\n\n"
+				if tweet.IsQuoted {
 
-				txt += subscribe + "\n"
-				txt += ourChannels + "\n"
-				txt += contactUs + "\n"
+					txt += "Quoted tweet:\nПроцитированный твит:\n\n"
 
-				media = extractMedia(tweet.Tweet, txt, quoted)
+					txt += fmt.Sprintf(`<a href="https://tweeter.com/%s">@%s</a>`, quoted.Username, quoted.Username) + "\n"
+
+					orgTextq, transtextq := normalizeText(quoted, quoted.Text, retweet)
+
+					txt += orgTextq
+					txt += transtextq
+
+					txt += "<code>via Twitter</code>\n" + postUrl + "\n\n\n"
+
+					txt += subscribe + "\n"
+					txt += ourChannels + "\n"
+					txt += contactUs + "\n"
+
+					media = extractMedia(tweet.Tweet, txt, quoted)
+
+					if len(tweet.Videos) == 0 && len(tweet.Photos) == 0 && len(tweet.GIFs) == 0 && len(media) == 0 {
+						_, err = bot.Send(channelID, txt, options)
+						if err != nil {
+							log.Println(err)
+							return
+						}
+					}
+					_, err = bot.SendAlbum(channelID, media, options)
+					if err != nil {
+						log.Println(err)
+					}
+					continue
+
+				} else if tweet.IsRetweet {
+					txt += "<code>via Twitter</code>\n" + postUrl + "\n\n\n"
+					txt += subscribe + "\n"
+					txt += ourChannels + "\n"
+					txt += contactUs + "\n"
+					if retweet != nil {
+						media = extractMedia(*retweet, txt, quoted)
+					} else {
+						media = extractMedia(tweet.Tweet, txt, quoted)
+					}
+
+					if len(tweet.Videos) == 0 && len(tweet.Photos) == 0 && len(tweet.GIFs) == 0 && len(media) == 0 {
+						_, err = bot.Send(channelID, txt, options)
+						if err != nil {
+							log.Println(err)
+							return
+						}
+					}
+					_, nerr := bot.SendAlbum(channelID, media, options)
+					if nerr != nil {
+						log.Println(nerr)
+					}
+					continue
+
+				}
+
+				if !tweet.IsQuoted {
+					txt += "<code>via Twitter</code>\n" + postUrl + "\n\n\n"
+
+					txt += subscribe + "\n"
+					txt += ourChannels + "\n"
+					txt += contactUs + "\n"
+					media = extractMedia(tweet.Tweet, txt, quoted)
+				}
 
 				if len(tweet.Videos) == 0 && len(tweet.Photos) == 0 && len(tweet.GIFs) == 0 && len(media) == 0 {
 					_, err = bot.Send(channelID, txt, options)
@@ -167,53 +215,6 @@ func main() {
 				if err != nil {
 					log.Println(err)
 				}
-				continue
-
-			} else if tweet.IsRetweet {
-				txt += "<code>via Twitter</code>\n" + postUrl + "\n\n\n"
-				txt += subscribe + "\n"
-				txt += ourChannels + "\n"
-				txt += contactUs + "\n"
-				if retweet != nil {
-					media = extractMedia(*retweet, txt, quoted)
-				} else {
-					media = extractMedia(tweet.Tweet, txt, quoted)
-				}
-
-				if len(tweet.Videos) == 0 && len(tweet.Photos) == 0 && len(tweet.GIFs) == 0 && len(media) == 0 {
-					_, err = bot.Send(channelID, txt, options)
-					if err != nil {
-						log.Println(err)
-						return
-					}
-				}
-				_, nerr := bot.SendAlbum(channelID, media, options)
-				if nerr != nil {
-					log.Println(nerr)
-				}
-				continue
-
-			}
-
-			if !tweet.IsQuoted {
-				txt += "<code>via Twitter</code>\n" + postUrl + "\n\n\n"
-
-				txt += subscribe + "\n"
-				txt += ourChannels + "\n"
-				txt += contactUs + "\n"
-				media = extractMedia(tweet.Tweet, txt, quoted)
-			}
-
-			if len(tweet.Videos) == 0 && len(tweet.Photos) == 0 && len(tweet.GIFs) == 0 && len(media) == 0 {
-				_, err = bot.Send(channelID, txt, options)
-				if err != nil {
-					log.Println(err)
-					return
-				}
-			}
-			_, err = bot.SendAlbum(channelID, media, options)
-			if err != nil {
-				log.Println(err)
 			}
 
 			time.Sleep(time.Minute * 10)
