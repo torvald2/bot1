@@ -72,7 +72,7 @@ func main() {
 	USER_LOOP:
 		for _, user := range data.Users {
 			tweets := make([]*twitterscraper.TweetResult, 0)
-			for tweet := range scraper.SearchTweets(context.Background(), fmt.Sprintf("from:%s", user), 5) {
+			for tweet := range scraper.SearchTweets(context.Background(), fmt.Sprintf("from:%s", user), 2) {
 				if tweet.Error != nil {
 					//r = tweet.Error
 					//i++
